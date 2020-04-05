@@ -29,3 +29,17 @@ python manager.py startapp appname
                     def hamtest(request):                    #định nghĩa hàm với biến request 
                         return render(request, "index.html") #trả về render file html
 ```
+## Test truyền biến qua form
+
+    def post(self, request):
+        so1 = request.POST.get('soa')    #Nhận biến từ POST
+        so2 = request.POST.get('sob')
+        tong =  int(so1) + int(so2)      #Toán tử 
+        hieu = int(so1) - int(so2)
+        context = {                      #Kiểu dữ liệu   dict         
+            'tong': tong,
+            'hieu': hieu
+
+        }
+        return render(request, "index.html", context)   #Trả về file html với context
+        
