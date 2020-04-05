@@ -11,3 +11,7 @@ django-admin startproject tenproject .
 ``` 
 python manage.py runserver
 ```
+## Tạo app trong project
+```
+python manager.py startapp appname
+```
