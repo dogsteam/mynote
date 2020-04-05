@@ -15,3 +15,17 @@ python manage.py runserver
 ```
 python manager.py startapp appname
 ```
+## Chạy demo web
+```
+1. Tạo thư mục templates trong thư mục project, thư mục này chứa các file hiển thị
+2. Chỉnh trong settings đường dẫn 'DIRS': [os.path.join(BASE_DIR, 'templates')], đến thư mục templates vừa tạo
+3. Viết hàm định tuyến URL đến thư mục template trong urls.py 
+                    from backend.views import hamtest #import hàm từ trong views.py, nằm trong project backend
+                    urlpatterns = [
+                        path('admin/', admin.site.urls),   #demo
+                        path('', hamtest),                 #đường dẫn gọi đến hamtest   
+                    ]
+4. Trong views.py
+                    def hamtest(request):                    #định nghĩa hàm với biến request 
+                        return render(request, "index.html") #trả về render file html
+```
