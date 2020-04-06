@@ -43,3 +43,31 @@ python manager.py startapp appname
         }
         return render(request, "index.html", context)   #Trả về file html với context
         
+        ##
+        
+        Để gửi get request lấy dữ liệu từ 1 server bất kỳ 
+        
+        cần :
+        ## link của api 
+        ## các tham số cần thiết
+        
+        Thư viện cần thư viện 
+        ```
+        requests
+        ```
+        
+        cách cài ``` pip install requests``
+        
+        ```python
+        
+        import requests
+import json
+
+
+r = requests.get("https://graph.facebook.com/3132894833388356?fields=name&access_token=EAAdZAypcTckcBANZBy1F8ZCF3NA7SSRJQIkqLitTJQ2SXRH1uj6maJGVZAPnUw7BlQTWndHWZA8qKNjDS5qil0y0BztSFcUmvmBCTjswpV4qBPDhZAK9u1sWrLID2RtUvKVPPCzFZCZACIFPbrWpqjUY4r7NKao75Fon0SRReREzZCWEbzZAuJPYqqZAhR7thiAw5EnRVSJSEHyQjWg53l3infr")
+print(r.content)
+a = json.loads(r.text)
+print('title la:', a['name'])
+        
+        ```
+       
