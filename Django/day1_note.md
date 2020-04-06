@@ -57,7 +57,8 @@ python manager.py startapp appname
         ```
         
         cách cài ``` pip install requests``
-        
+      ```
+      
         ```python
         
         import requests
@@ -70,4 +71,20 @@ a = json.loads(r.text)
 print('title la:', a['name'])
         
         ```
-       
+      
+      
+      Post để gửi dữ liệu lên server ữ liệu ở dạng json 
+      
+  ```    
+import requests
+import json
+
+data = {
+    'tinnhan': 'son '
+}
+
+r = requests.post('http://127.0.0.1:8000/api-test/', json=data)
+print(r.content)```
+
+
+Lưu ý `1 số api cần key hoặc token .
