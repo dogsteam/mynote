@@ -23,7 +23,7 @@ python manager.py startapp appname
                     from backend.views import hamtest #import hàm từ trong views.py, nằm trong project backend
                     urlpatterns = [
                         path('admin/', admin.site.urls),   #demo
-                        path('', hamtest),                 #đường dẫn gọi đến hamtest   
+                        path('', IndexView.as_view()),                 #đường dẫn gọi đến hamtest   
                     ]
 4. Trong views.py
                     def hamtest(request):                    #định nghĩa hàm với biến request 
